@@ -10,7 +10,7 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.createInexitenceFile"
+        "*"
     ],
     "main": "./out/extension.js",
     "contributes": {
@@ -20,8 +20,8 @@
             "mac": "alt+enter"
         }],
         "keybindings": [{
-			"command": "create Inexitence File",
-			"key":"alt + enter"
+            "command": "extension.createInexitenceFile",
+            "key": "alt+enter"
         }]
     },
     "scripts": {

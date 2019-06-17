@@ -8,23 +8,23 @@ import { AppModel } from './appModel';
 export function activate(context: vscode.ExtensionContext) {
     // Use the console to output diagnostic information (console.log) and errors (console.error)
     // This line of code will only be executed once when your extension is activated
-    console.log('Congratulations, your extension "helloworld" is now active!');
 
     // The command has been defined in the package.json file
     // Now provide the implementation of the command with registerCommand
     // The commandId parameter must match the command field in package.json
-    let disposable = vscode.commands.registerCommand('extension.helloWorld', () => {
+    let disposable = vscode.commands.registerCommand('extension.createInexitenceFile', () => {
         console.log('vscode.window');
         console.log(vscode.window.activeTextEditor);
         console.log('vscode.window');
 
         // The code you place here will be executed every time your command is executed
 
-        let line = vscode.window.activeTextEditor['_documentData']['_lines'][3];
-
+        let line = vscode.window.activeTextEditor['_documentData']['_lines'][0];
+        console.log(line);
         let reg = /'(.*)'$/;
         let path = line.match(reg);
 
+        console.log(path);
         let app = new AppModel();
         app.createFileOrFolder('file', path[1]);
         // Display a message box to the user
