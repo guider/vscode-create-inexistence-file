@@ -16,7 +16,6 @@ export function activate(context: vscode.ExtensionContext) {
     let disposable = vscode.commands.registerCommand('extension.helloWorld', () => {
         console.log('vscode.window');
         console.log(vscode.window.activeTextEditor);
-        console.log(vscode.window.activeTextEditor['_documentData']['_lines'][3]);
         console.log('vscode.window');
 
         // The code you place here will be executed every time your command is executed
@@ -25,14 +24,11 @@ export function activate(context: vscode.ExtensionContext) {
 
         let reg = /'(.*)'$/;
         let path = line.match(reg);
-        console.log('2222');
-        console.log(path);
 
         let app = new AppModel();
         app.createFileOrFolder('file', path[1]);
-
         // Display a message box to the user
-        vscode.window.showInformationMessage('Hello World!');
+        // vscode.window.showInformationMessage('Hello World!');
     });
 
     context.subscriptions.push(disposable);
