@@ -19,6 +19,10 @@ export function activate(context: vscode.ExtensionContext) {
         console.log('vscode.window');
         let editor = vscode.window.activeTextEditor;
 
+        if (!editor) {
+            return;
+        }
+
         console.log(editor.document.lineAt(0).text);
         console.log(editor.selection.active.line);
         let line = editor.document.lineAt(editor.selection.active.line).text;
