@@ -21,12 +21,8 @@
         }],
         "keybindings": [{
                 "command": "extension.createInexitenceFile",
-                "key": "alt+enter"
-            },
-            {
-                "command": "extension.sayHello",
-                "key": "ctrl+f1",
-                "mac": "cmd+f1"
+                "key": "alt+enter",
+                "when": "*"
             }
         ]
     },

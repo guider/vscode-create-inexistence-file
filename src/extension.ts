@@ -33,7 +33,9 @@ export function activate(context: vscode.ExtensionContext) {
         let path = line.match(reg);
         console.log(path);
         let app = new AppModel();
-        app.createFileOrFolder('file', path[1]);
+        if (path) {
+            app.createFileOrFolder('file', path[1]);
+        }
         // Display a message box to the user
         // vscode.window.showInformationMessage('Hello World!');
     });
